@@ -19,8 +19,30 @@
   <img src="docs/assets/recording-demo.gif" alt="CloudVerse 真实录屏：极光壁纸上的居中歌词、中文翻译与逐字高亮">
 </div>
 
-<div align="center"><sub>由用户提供的真实录屏截取并转换，展示极光壁纸上的歌词换句与逐字高亮；已裁去顶部菜单栏。GIF 为无声循环，未改变片段播放速度。</sub></div>
+<div align="center"><sub>真实录屏效果，展示极光壁纸上的歌词换句与逐字高亮；已裁去顶部菜单栏。GIF 为无声循环，未改变片段播放速度。</sub></div>
 <!-- readme-skill:end hero -->
+
+<!-- readme-skill:begin preview -->
+## 效果预览
+
+### 主题库
+
+<div align="center">
+  <img src="docs/assets/theme-gallery-demo.gif" alt="CloudVerse 主题库演示：八款壁纸融合主题依次切换，展示不同字形与逐字高亮">
+</div>
+
+八款壁纸融合主题默认居中排版，分别采用楷体、粗黑、粗宋、超细黑体、圆体、等宽和手写等字形；可在「主题工作室」中预览、切换主题与字形。
+
+### 菜单栏小组件
+
+<div align="center">
+  <img src="docs/assets/control-panel-demo.gif" width="360" alt="CloudVerse 菜单栏小组件演示：播放进度、当前歌词、播放控制与常用设置">
+</div>
+
+左击菜单栏波形图标打开小组件，可控制播放与切歌，切换主题、字形和字号，调整同步偏移，或解锁后直接拖动歌词。
+
+<div align="center"><sub>以上两段 GIF 由应用界面组件在演示模式下离线渲染，使用原创演示歌词与示意壁纸；主题库中的逐字高亮已加速，并非网易云实时播放录屏。</sub></div>
+<!-- readme-skill:end preview -->
 
 <!-- readme-skill:begin quick-start -->
 ## 快速开始

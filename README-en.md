@@ -19,8 +19,30 @@
   <img src="docs/assets/recording-demo.gif" alt="CloudVerse screen recording: centered lyrics, Chinese translations, and word-by-word highlighting over an aurora wallpaper">
 </div>
 
-<div align="center"><sub>Converted from a user-provided screen recording, showing lyric transitions and word-by-word highlighting over an aurora wallpaper; the top menu bar has been cropped out. The GIF loops without audio and retains the clip's playback speed.</sub></div>
+<div align="center"><sub>Converted from a screen recording, showing lyric transitions and word-by-word highlighting over an aurora wallpaper; the top menu bar has been cropped out. The GIF loops without audio and retains the clip's playback speed.</sub></div>
 <!-- readme-skill:end hero -->
+
+<!-- readme-skill:begin preview -->
+## Preview
+
+### Theme Gallery
+
+<div align="center">
+  <img src="docs/assets/theme-gallery-demo.gif" alt="CloudVerse theme gallery demo: eight wallpaper-blending themes in sequence, showing different typefaces and word-by-word highlighting">
+</div>
+
+The eight wallpaper-blending themes are centered by default and use distinct typefaces, including Kaiti, bold Heiti, black Songti, ultralight Heiti, Yuanti, monospace, and handwriting. Preview and switch themes and typefaces in the Theme Studio.
+
+### Menu Bar Widget
+
+<div align="center">
+  <img src="docs/assets/control-panel-demo.gif" width="360" alt="CloudVerse menu bar widget demo: playback progress, current lyric, playback controls, and common settings">
+</div>
+
+Left-click the menu bar waveform icon to open the widget. Control playback and switch tracks, change the theme, typeface, and size, adjust the sync offset, or unlock the lyrics to drag them directly.
+
+<div align="center"><sub>Both GIFs are rendered offline from the app's interface components in demo mode, using original demo lyrics and illustrative wallpapers. Word highlighting in the theme gallery is sped up; neither is a recording of live NetEase playback.</sub></div>
+<!-- readme-skill:end preview -->
 
 <!-- readme-skill:begin quick-start -->
 ## Quick Start

@@ -106,12 +106,15 @@ struct ThemePreview: View {
     var canvasSize: CGSize = CGSize(width: 900, height: 520)
     var motionEnabled: Bool = true
     var fontChoice: FontChoice = .theme
+    var fixedTime: Double? = nil
     @PreviewState private var startedAt = Date()
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         Group {
-            if live {
+            if let fixedTime {
+                stage(time: fixedTime)
+            } else if live {
                 TimelineView(.periodic(from: .now, by: reduceMotion ? 0.5 : 1.0 / 30)) { context in
                     stage(time: PreviewClock(startedAt: startedAt).position(at: context.date))
                 }

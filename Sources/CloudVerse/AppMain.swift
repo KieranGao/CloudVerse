@@ -9,6 +9,10 @@ struct CloudVerseMain {
             application.setActivationPolicy(.prohibited)
             let directory = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent("dist/ThemePreviews", isDirectory: true)
             exit(ThemePreviewExport.run(directory: directory) ? 0 : 1)
+        } else if CommandLine.arguments.contains("--render-readme-demos") {
+            application.setActivationPolicy(.prohibited)
+            let directory = URL(fileURLWithPath: FileManager.default.currentDirectoryPath).appendingPathComponent("docs/assets", isDirectory: true)
+            exit(ReadmeDemoExport.run(directory: directory) ? 0 : 1)
         } else if CommandLine.arguments.contains("--check-desktop") {
             application.setActivationPolicy(.accessory)
             exit(DesktopIntegrationChecks.run() ? 0 : 1)

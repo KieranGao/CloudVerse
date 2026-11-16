@@ -209,6 +209,11 @@ final class AppModel: ObservableObject {
         }
     }
 
+    func seekDemo(to seconds: Double) {
+        guard isDemo, let track = snapshot?.track, seconds.isFinite else { return }
+        snapshot = PlaybackSnapshot(track: track, elapsed: 0, rate: 1, sampledAt: Date().addingTimeInterval(-max(0, seconds)))
+    }
+
     func toggleDemo() {
         readGeneration += 1
         controlTask?.cancel()
