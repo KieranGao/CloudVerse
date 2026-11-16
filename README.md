@@ -1,19 +1,25 @@
 <!-- readme-skill:begin hero -->
-# CloudVerse
+<div align="center">
+  <a href="#快速开始"><img src="Resources/CloudVerseIcon.png" width="112" alt="CloudVerse 云朵与爱心波形图标"></a>
 
-让桌面轻轻唱歌。为网易云音乐 macOS 客户端打造的第三方桌面歌词应用，让同步歌词融入壁纸，也能随时置顶。
+  <h1>CloudVerse</h1>
 
-![macOS 13+](https://img.shields.io/badge/macOS-13%2B-222222?style=flat&logo=apple&logoColor=white)
-![Swift 5.9+](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat&logo=swift&logoColor=white)
-[![MIT 许可证](https://img.shields.io/badge/License-MIT-617A69?style=flat)](LICENSE)
+  <p>让桌面轻轻唱歌。为网易云音乐 macOS 客户端打造的第三方桌面歌词应用，<br>让同步歌词融入壁纸，也能置歌词于顶端。</p>
 
-中文 · [English](README-en.md)
+  <p>
+    <img src="https://img.shields.io/badge/macOS-13%2B-222222?style=flat&amp;logo=apple&amp;logoColor=white" alt="macOS 13+">
+    <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat&amp;logo=swift&amp;logoColor=white" alt="Swift 5.9+">
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-617A69?style=flat" alt="MIT 许可证"></a>
+  </p>
 
-[快速开始](#快速开始) · [作者 GitHub](https://github.com/KieranGao)
+  <p>中文 · <a href="README-en.md">English</a>　·　<a href="#快速开始">快速开始</a></p>
+</div>
 
-![CloudVerse 八款壁纸融合主题轮播与菜单栏控制面板，使用原创演示歌词和示意背景](docs/assets/hero-demo.gif)
+<div align="center">
+  <img src="docs/assets/recording-demo.gif" alt="CloudVerse 真实录屏：极光壁纸上的居中歌词、中文翻译与逐字高亮">
+</div>
 
-*GIF 由应用真实歌词组件和控制面板渲染合成，展示八款壁纸融合主题；使用本地原创演示歌词、模拟逐字时间轴与示意背景，并非网易云实时播放录屏。应用另有三款经典主题。*
+<div align="center"><sub>由用户提供的真实录屏截取并转换，展示极光壁纸上的歌词换句与逐字高亮；已裁去顶部菜单栏。GIF 为无声循环，未改变片段播放速度。</sub></div>
 <!-- readme-skill:end hero -->
 
 <!-- readme-skill:begin quick-start -->
@@ -87,8 +93,6 @@ open dist/CloudVerse.app
 | 锁定／鼠标穿透 | 开启 | 解锁后可拖动歌词 |
 | 翻译 | 开启 | 显示已提供的翻译 |
 | 同步偏移 | 0 秒 | 可调范围 −10 至 +10 秒 |
-
-设置侧栏底部显示作者 **KieranGao**；点击「访问 GitHub」可直接打开作者个人主页。
 <!-- readme-skill:end usage -->
 
 <!-- readme-skill:begin workflow -->
@@ -161,9 +165,7 @@ dist/CloudVerse.app/Contents/MacOS/CloudVerse --render-themes
 <!-- readme-skill:end development -->
 
 <!-- readme-skill:begin maintainer -->
-## 作者与许可证
-
-由 [KieranGao](https://github.com/KieranGao) 开发。应用 `Info.plist` 包含作者署名和个人主页，设置侧栏提供直接访问按钮。
+## 许可证
 
 本项目采用 [MIT 许可证](LICENSE)。
 <!-- readme-skill:end maintainer -->

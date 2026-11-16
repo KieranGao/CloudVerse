@@ -1,19 +1,25 @@
 <!-- readme-skill:begin hero -->
-# CloudVerse
+<div align="center">
+  <a href="#quick-start"><img src="Resources/CloudVerseIcon.png" width="112" alt="CloudVerse cloud and heartbeat waveform icon"></a>
 
-Let your desktop sing softly. A third-party desktop lyrics app for the NetEase Cloud Music macOS client, with synchronized lyrics that blend into your wallpaper or stay on top.
+  <h1>CloudVerse</h1>
 
-![macOS 13+](https://img.shields.io/badge/macOS-13%2B-222222?style=flat&logo=apple&logoColor=white)
-![Swift 5.9+](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat&logo=swift&logoColor=white)
-[![MIT License](https://img.shields.io/badge/License-MIT-617A69?style=flat)](LICENSE)
+  <p>Let your desktop sing softly. A third-party desktop lyrics app for the NetEase Cloud Music macOS client,<br>with synchronized lyrics that blend into your wallpaper or stay on top.</p>
 
-[中文](README.md) · English
+  <p>
+    <img src="https://img.shields.io/badge/macOS-13%2B-222222?style=flat&amp;logo=apple&amp;logoColor=white" alt="macOS 13+">
+    <img src="https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat&amp;logo=swift&amp;logoColor=white" alt="Swift 5.9+">
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-617A69?style=flat" alt="MIT License"></a>
+  </p>
 
-[Quick Start](#quick-start) · [Author on GitHub](https://github.com/KieranGao)
+  <p><a href="README.md">中文</a> · English　·　<a href="#quick-start">Quick Start</a></p>
+</div>
 
-![CloudVerse cycling through eight wallpaper-blending themes alongside its menu bar control panel, using original demo lyrics and illustrative backgrounds](docs/assets/hero-demo.gif)
+<div align="center">
+  <img src="docs/assets/recording-demo.gif" alt="CloudVerse screen recording: centered lyrics, Chinese translations, and word-by-word highlighting over an aurora wallpaper">
+</div>
 
-*The GIF combines renders of the app's actual lyric components and control panel, showing eight wallpaper-blending themes. It uses local original demo lyrics, simulated word timing, and illustrative backgrounds—not a recording of live NetEase playback. The app also includes three classic themes.*
+<div align="center"><sub>Converted from a user-provided screen recording, showing lyric transitions and word-by-word highlighting over an aurora wallpaper; the top menu bar has been cropped out. The GIF loops without audio and retains the clip's playback speed.</sub></div>
 <!-- readme-skill:end hero -->
 
 <!-- readme-skill:begin quick-start -->
@@ -87,8 +93,6 @@ Preferences are stored in the system `UserDefaults` and restored after restart. 
 | Lock / click-through | Enabled | Unlock to drag lyrics |
 | Translation | Enabled | Show available translations |
 | Sync offset | 0 seconds | Adjustable from −10 to +10 seconds |
-
-The settings sidebar displays the author, **KieranGao**, at the bottom. Select “访问 GitHub” (Visit GitHub) to open the author's personal profile directly.
 <!-- readme-skill:end usage -->
 
 <!-- readme-skill:begin workflow -->
@@ -161,9 +165,7 @@ Report issues or suggest improvements through [GitHub Issues](https://github.com
 <!-- readme-skill:end development -->
 
 <!-- readme-skill:begin maintainer -->
-## Author and License
-
-Developed by [KieranGao](https://github.com/KieranGao). The app's `Info.plist` includes author attribution and the personal profile URL, with a direct-access button in the settings sidebar.
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 <!-- readme-skill:end maintainer -->

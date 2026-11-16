@@ -57,15 +57,7 @@ struct SettingsView: View {
             Text(model.isDemo ? "演示模式" : (model.snapshot == nil ? "等待连接" : "已获取播放信息")).font(.system(size: 11, weight: .medium))
             Text("0.3 · 居中与控制面板版").font(.system(size: 10)).foregroundStyle(.secondary).padding(.top, 6)
             Divider().padding(.vertical, 6)
-            Text("作者：\(Bundle.main.object(forInfoDictionaryKey: "CloudVerseAuthor") as? String ?? "KieranGao")")
-                .font(.system(size: 11)).foregroundStyle(.secondary)
-            if let url = URL(string: Bundle.main.object(forInfoDictionaryKey: "CloudVerseAuthorURL") as? String ?? "https://github.com/KieranGao") {
-                Link(destination: url) {
-                    Label("访问 GitHub", systemImage: "arrow.up.right.square")
-                        .font(.system(size: 11, weight: .medium))
-                }
-                .buttonStyle(.bordered)
-            }
+            GitHubAuthorLink()
         }
         .padding(20)
         .background(Color.primary.opacity(0.025))

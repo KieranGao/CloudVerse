@@ -83,6 +83,10 @@ struct ControlPanelView: View {
                     Spacer()
                     Button { NSApp.terminate(nil) } label: { Image(systemName: "power") }.help("退出 CloudVerse")
                 }.font(.system(size: 11))
+                HStack {
+                    GitHubAuthorLink(fontSize: 10.5, iconSize: 15)
+                    Spacer()
+                }
             }
             .padding(20)
         }
