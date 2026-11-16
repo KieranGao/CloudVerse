@@ -16,8 +16,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         NSApp.setActivationPolicy(.accessory)
         overlay = OverlayWindow(model: model)
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        item.button?.image = NSImage(systemSymbolName: "waveform", accessibilityDescription: "FancyLyrics")
-        item.button?.toolTip = "FancyLyrics · 桌面歌词"
+        item.button?.image = NSImage(systemSymbolName: "waveform", accessibilityDescription: "CloudVerse")
+        item.button?.toolTip = "CloudVerse · 桌面歌词"
         fallbackMenu.delegate = self
         item.button?.target = self
         item.button?.action = #selector(toggleControlPanel)
@@ -40,7 +40,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func menuNeedsUpdate(_ menu: NSMenu) {
         menu.removeAllItems()
-        let status = NSMenuItem(title: model.isDemo ? "FancyLyrics · 演示模式" : "FancyLyrics", action: nil, keyEquivalent: "")
+        let status = NSMenuItem(title: model.isDemo ? "CloudVerse · 演示模式" : "CloudVerse", action: nil, keyEquivalent: "")
         menu.addItem(status)
         if let track = model.snapshot?.track {
             menu.addItem(NSMenuItem(title: String("\(track.title) — \(track.artist)".prefix(50)), action: nil, keyEquivalent: ""))
@@ -68,7 +68,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         add(menu, model.isDemo ? "退出演示模式" : "开启演示模式", #selector(toggleDemo))
         add(menu, "重新匹配歌词", #selector(reloadLyrics)).isEnabled = model.snapshot != nil && !model.isDemo
         menu.addItem(.separator())
-        add(menu, "退出 FancyLyrics", #selector(quit), key: "q")
+        add(menu, "退出 CloudVerse", #selector(quit), key: "q")
     }
 
     @discardableResult
@@ -97,7 +97,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         controlPanel.performClose(nil)
         if settings == nil {
             let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 1020, height: 800), styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered, defer: false)
-            window.title = "FancyLyrics"
+            window.title = "CloudVerse"
             window.titlebarAppearsTransparent = true
             window.isReleasedWhenClosed = false
             window.minSize = NSSize(width: 780, height: 640)

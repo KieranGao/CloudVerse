@@ -14,7 +14,7 @@ import LyricsCore
                 try save(view, size: CGSize(width: 900, height: 520), to: directory.appendingPathComponent("\(theme.rawValue).png"))
             }
             try save(ThemeContactSheet(), size: CGSize(width: 1200, height: 1790), to: directory.appendingPathComponent("gallery.png"))
-            let suite = "FancyLyrics.PanelPreview.\(UUID().uuidString)"
+            let suite = "CloudVerse.PanelPreview.\(UUID().uuidString)"
             if let defaults = UserDefaults(suiteName: suite) {
                 defer { defaults.removePersistentDomain(forName: suite) }
                 let preferences = Preferences(defaults: defaults)
@@ -22,6 +22,8 @@ import LyricsCore
                 model.toggleDemo()
                 let panel = ControlPanelView(model: model, preferences: preferences, openSettings: {}, resetPosition: {}, dismiss: {}).environment(\.colorScheme, .dark)
                 try saveHosted(panel, size: CGSize(width: 370, height: 690), to: directory.appendingPathComponent("control-panel.png"))
+                let settings = SettingsView(model: model, preferences: preferences, resetPosition: {}).environment(\.colorScheme, .light)
+                try saveHosted(settings, size: CGSize(width: 1020, height: 800), to: directory.appendingPathComponent("settings.png"))
             }
             print("PREVIEW PASS: 8 centered themes and menu bar panel rendered to \(directory.path)")
             return true
@@ -64,7 +66,7 @@ private struct ThemeContactSheet: View {
             VStack(alignment: .leading, spacing: 10) {
                 Text("THE WALLPAPER EDITION").font(.system(size: 10, weight: .medium, design: .monospaced)).tracking(4).foregroundStyle(Color(red: 0.58, green: 0.54, blue: 0.42))
                 Text("让壁纸本身，轻轻唱歌。").font(.custom("Songti SC", size: 36)).foregroundStyle(Color(red: 0.22, green: 0.22, blue: 0.19))
-                Text("FancyLyrics · 八款无底板歌词主题 · 本地原创样例 / 示意背景").font(.system(size: 12)).foregroundStyle(.secondary)
+                Text("CloudVerse · 八款无底板歌词主题 · 本地原创样例 / 示意背景").font(.system(size: 12)).foregroundStyle(.secondary)
             }
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 22) {
                 ForEach(themes) { theme in

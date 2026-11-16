@@ -3,7 +3,7 @@ import LyricsCore
 
 struct CacheTests {
     func run() async {
-        let folder = FileManager.default.temporaryDirectory.appendingPathComponent("FancyLyricsChecks-\(UUID().uuidString)")
+        let folder = FileManager.default.temporaryDirectory.appendingPathComponent("CloudVerseChecks-\(UUID().uuidString)")
         defer { try? FileManager.default.removeItem(at: folder) }
         let cache = LyricCache(directory: folder)
         let document = LyricDocument(lines: [LyricLine(start: 1, text: "Hello", translation: "你好")])

@@ -37,7 +37,7 @@ struct SettingsView: View {
             HStack(spacing: 10) {
                 Image(systemName: "waveform").font(.system(size: 22, weight: .light)).foregroundStyle(Color(red: 0.55, green: 0.48, blue: 0.96))
                 VStack(alignment: .leading, spacing: 3) {
-                    Text("FancyLyrics").font(.system(size: 15, weight: .bold))
+                    Text("CloudVerse").font(.system(size: 15, weight: .bold))
                     Text("YOUR MUSIC, YOUR SPACE").font(.system(size: 6, weight: .medium)).tracking(1)
                 }
             }
@@ -56,6 +56,16 @@ struct SettingsView: View {
             Circle().fill(model.snapshot == nil ? Color.orange : (model.isDemo ? Color.purple : Color.green)).frame(width: 6, height: 6)
             Text(model.isDemo ? "演示模式" : (model.snapshot == nil ? "等待连接" : "已获取播放信息")).font(.system(size: 11, weight: .medium))
             Text("0.3 · 居中与控制面板版").font(.system(size: 10)).foregroundStyle(.secondary).padding(.top, 6)
+            Divider().padding(.vertical, 6)
+            Text("作者：\(Bundle.main.object(forInfoDictionaryKey: "CloudVerseAuthor") as? String ?? "KieranGao")")
+                .font(.system(size: 11)).foregroundStyle(.secondary)
+            if let url = URL(string: Bundle.main.object(forInfoDictionaryKey: "CloudVerseAuthorURL") as? String ?? "https://github.com/KieranGao") {
+                Link(destination: url) {
+                    Label("访问 GitHub", systemImage: "arrow.up.right.square")
+                        .font(.system(size: 11, weight: .medium))
+                }
+                .buttonStyle(.bordered)
+            }
         }
         .padding(20)
         .background(Color.primary.opacity(0.025))
@@ -133,7 +143,7 @@ struct SettingsView: View {
                 Toggle("启用本地 Perl 播放兼容性适配", isOn: $preferences.bridgeEnabled)
                 Text("直接读取受限时，本应用启动 /usr/bin/perl 子进程，加载随 App 打包的播放模块查询系统正在播放信息；不修改系统文件、不向网易云注入代码。此方法和 MediaRemote 都不是公开稳定接口，系统更新可能使其失效，不适用于 App Store 沙盒分发。").font(.system(size: 12))
                 Text("浏览器播放视频可能占用系统媒体源，此时请回网易云点击播放后重新同步。控制会核验来源并回读变化，但底层是系统全局私有媒体接口，源切换的瞬间仍有竞态风险。关闭适配后可尝试辅助功能读取，部分客户端不支持。").font(.system(size: 12))
-                Text("当前无需 Xcode：在项目目录运行 swift run CoreChecks 验证，运行 bash scripts/build-app.sh 打包，随后打开 dist/FancyLyrics.app。未申请 Mac App Store 上架支持。").font(.system(size: 11)).foregroundStyle(.secondary).textSelection(.enabled)
+                Text("当前无需 Xcode：在项目目录运行 swift run CoreChecks 验证，运行 bash scripts/build-app.sh 打包，随后打开 dist/CloudVerse.app。未申请 Mac App Store 上架支持。").font(.system(size: 11)).foregroundStyle(.secondary).textSelection(.enabled)
             }
             .foregroundStyle(.secondary)
         }

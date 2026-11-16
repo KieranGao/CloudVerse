@@ -12,7 +12,7 @@ struct PlaybackReading {
 final class PlaybackReader {
     private typealias InfoFunction = @convention(c) (DispatchQueue, @escaping (CFDictionary?) -> Void) -> Void
     private let framework: UnsafeMutableRawPointer?
-    private let queue = DispatchQueue(label: "FancyLyrics.Playback", qos: .utility)
+    private let queue = DispatchQueue(label: "CloudVerse.Playback", qos: .utility)
 
     init() {
         framework = dlopen("/System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote", RTLD_LAZY)

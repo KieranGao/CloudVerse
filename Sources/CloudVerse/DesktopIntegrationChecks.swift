@@ -4,7 +4,7 @@ import LyricsCore
 @MainActor
  enum DesktopIntegrationChecks {
     static func run() -> Bool {
-        let suite = "FancyLyrics.DesktopChecks.\(UUID().uuidString)"
+        let suite = "CloudVerse.DesktopChecks.\(UUID().uuidString)"
         guard let defaults = UserDefaults(suiteName: suite) else { return false }
         defer { defaults.removePersistentDomain(forName: suite) }
         let preferences = Preferences(defaults: defaults)

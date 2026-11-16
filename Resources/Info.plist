@@ -2,16 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleExecutable</key><string>FancyLyrics</string>
+    <key>CFBundleExecutable</key><string>CloudVerse</string>
     <key>CFBundleIdentifier</key><string>local.fancylyrics.app</string>
-    <key>CFBundleName</key><string>FancyLyrics</string>
-    <key>CFBundleDisplayName</key><string>FancyLyrics</string>
+    <key>CFBundleName</key><string>CloudVerse</string>
+    <key>CFBundleDisplayName</key><string>CloudVerse</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>0.3.0</string>
-    <key>CFBundleVersion</key><string>3</string>
+    <key>CFBundleIconFile</key><string>CloudVerse</string>
+    <key>CFBundleIconName</key><string>CloudVerse</string>
+    <key>CFBundleVersion</key><string>4</string>
     <key>LSMinimumSystemVersion</key><string>13.0</string>
     <key>LSUIElement</key><true/>
     <key>NSHighResolutionCapable</key><true/>
-    <key>NSHumanReadableCopyright</key><string>FancyLyrics</string>
+    <key>NSHumanReadableCopyright</key><string>Copyright © 2026 KieranGao</string>
+    <key>CloudVerseAuthor</key><string>KieranGao</string>
+    <key>CloudVerseAuthorURL</key><string>https://github.com/KieranGao</string>
 </dict>
 </plist>

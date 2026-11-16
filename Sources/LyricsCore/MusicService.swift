@@ -39,7 +39,7 @@ public actor MusicService {
         url.queryItems = query.sorted { $0.key < $1.key }.map { URLQueryItem(name: $0.key, value: $0.value) }
         guard let endpoint = url.url else { throw MusicError.invalidPayload }
         var request = URLRequest(url: endpoint)
-        request.setValue("Mozilla/5.0 FancyLyrics/0.1", forHTTPHeaderField: "User-Agent")
+        request.setValue("Mozilla/5.0 CloudVerse/0.3", forHTTPHeaderField: "User-Agent")
         request.setValue("https://music.163.com/", forHTTPHeaderField: "Referer")
         let (data, response) = try await session.data(for: request)
         guard let http = response as? HTTPURLResponse else { throw MusicError.invalidPayload }

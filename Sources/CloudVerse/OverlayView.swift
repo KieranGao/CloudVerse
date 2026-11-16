@@ -14,7 +14,7 @@ struct OverlayView: View {
             let next = model.document.lines.indices.contains(nextIndex) ? model.document.lines[nextIndex].text : nil
             let previousIndex = (index ?? 0) - 1
             let previous = model.document.lines.indices.contains(previousIndex) ? model.document.lines[previousIndex].text : nil
-            LyricCard(theme: preferences.theme, accent: model.accent, title: model.snapshot?.track.title ?? "FancyLyrics", artist: model.snapshot?.track.artist ?? "独立桌面歌词", line: line, next: preferences.nextLine ? next : nil, time: time, fontSize: preferences.fontSize, showTranslation: preferences.translation, status: model.displayStatus, demo: model.isDemo, locked: preferences.locked, artwork: model.artwork, previous: preferences.showPrevious ? previous : nil, tone: preferences.inkTone, textAlignment: preferences.alignment, effects: preferences.effects, showMetadata: preferences.showMetadata, ordinal: (index ?? 0) + 1, motionEnabled: preferences.animate, fontChoice: preferences.fontChoice)
+            LyricCard(theme: preferences.theme, accent: model.accent, title: model.snapshot?.track.title ?? "CloudVerse", artist: model.snapshot?.track.artist ?? "独立桌面歌词", line: line, next: preferences.nextLine ? next : nil, time: time, fontSize: preferences.fontSize, showTranslation: preferences.translation, status: model.displayStatus, demo: model.isDemo, locked: preferences.locked, artwork: model.artwork, previous: preferences.showPrevious ? previous : nil, tone: preferences.inkTone, textAlignment: preferences.alignment, effects: preferences.effects, showMetadata: preferences.showMetadata, ordinal: (index ?? 0) + 1, motionEnabled: preferences.animate, fontChoice: preferences.fontChoice)
                 .opacity(preferences.opacity)
                 .padding(16)
         }
@@ -194,7 +194,7 @@ struct LyricCard: View {
     private var footer: some View {
         HStack(spacing: 6) {
             Rectangle().fill(accent).frame(width: 16, height: 2)
-            Text("FANCY LYRICS").font(.system(size: 8, weight: .medium, design: .monospaced)).tracking(2).foregroundStyle(theme.foreground.opacity(0.34))
+            Text("CLOUDVERSE").font(.system(size: 8, weight: .medium, design: .monospaced)).tracking(2).foregroundStyle(theme.foreground.opacity(0.34))
             Spacer()
             if !locked {
                 Image(systemName: "hand.draw").font(.system(size: 9))

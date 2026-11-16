@@ -22,8 +22,8 @@ private final class PIDBox {
     }
 }
 
-@_cdecl("fancylyrics_control")
-public func fancylyricsControl() {
+@_cdecl("cloudverse_control")
+public func cloudverseControl() {
     guard let library = dlopen("/System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote", RTLD_LAZY) else {
         controlOutput(["accepted": false, "reason": "系统媒体框架不可用"])
     }

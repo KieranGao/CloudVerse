@@ -220,7 +220,7 @@ final class AppModel: ObservableObject {
         clearLyrics()
         isDemo.toggle()
         if isDemo {
-            snapshot = PlaybackSnapshot(track: Track(title: "城市的另一面", artist: "FancyLyrics 原创演示", album: "Night Walk", duration: 36), elapsed: 0, rate: 1)
+            snapshot = PlaybackSnapshot(track: Track(title: "城市的另一面", artist: "CloudVerse 原创演示", album: "Night Walk", duration: 36), elapsed: 0, rate: 1)
             document = DemoContent.document
             playbackStatus = "演示模式 · 非网易云实际播放数据"
             lyricStatus = "原创演示 · 模拟逐字时间轴"

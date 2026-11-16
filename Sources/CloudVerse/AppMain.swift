@@ -2,7 +2,7 @@ import AppKit
 
 @main
 @MainActor
-struct FancyLyricsMain {
+struct CloudVerseMain {
     static func main() {
         let application = NSApplication.shared
         if CommandLine.arguments.contains("--render-themes") {

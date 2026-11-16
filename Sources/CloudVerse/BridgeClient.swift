@@ -18,7 +18,7 @@ struct BridgeClient {
         guard ["play", "pause", "next", "previous", "check"].contains(action), let module = moduleURL() else {
             return ControlResult(accepted: false, reason: "播放辅助模块不可用")
         }
-        let script = #"use strict; use warnings; use DynaLoader; my $l=DynaLoader::dl_load_file($ARGV[0],0) or die; my $s=DynaLoader::dl_find_symbol($l,'fancylyrics_control') or die; DynaLoader::dl_install_xsub('main::control',$s); main::control();"#
+        let script = #"use strict; use warnings; use DynaLoader; my $l=DynaLoader::dl_load_file($ARGV[0],0) or die; my $s=DynaLoader::dl_find_symbol($l,'cloudverse_control') or die; DynaLoader::dl_install_xsub('main::control',$s); main::control();"#
         guard let data = BoundedProcess.run(executable: "/usr/bin/perl", arguments: ["-e", script, module.path, action], timeout: 4, maxBytes: 8192),
               let result = try? JSONDecoder().decode(ControlResult.self, from: data) else {
             return ControlResult(accepted: false, reason: "控制接口无响应；请直接在网易云操作")
@@ -33,5 +33,5 @@ struct BridgeClient {
         return FileManager.default.fileExists(atPath: local.path) ? local : nil
     }
 
-    private static let loader = #"use strict; use warnings; use DynaLoader; my $library = DynaLoader::dl_load_file($ARGV[0], 0) or die "bridge load failed"; my $symbol = DynaLoader::dl_find_symbol($library, "fancylyrics_probe") or die "bridge symbol missing"; DynaLoader::dl_install_xsub("main::probe", $symbol); main::probe();"#
+    private static let loader = #"use strict; use warnings; use DynaLoader; my $library = DynaLoader::dl_load_file($ARGV[0], 0) or die "bridge load failed"; my $symbol = DynaLoader::dl_find_symbol($library, "cloudverse_probe") or die "bridge symbol missing"; DynaLoader::dl_install_xsub("main::probe", $symbol); main::probe();"#
 }

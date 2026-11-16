@@ -8,8 +8,8 @@ private final class ResultBox {
     func load() -> [String: Any]? { lock.lock(); defer { lock.unlock() }; return value }
 }
 
-@_cdecl("fancylyrics_probe")
-public func fancylyricsProbe() {
+@_cdecl("cloudverse_probe")
+public func cloudverseProbe() {
     guard let library = dlopen("/System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote", RTLD_LAZY),
           let symbol = dlsym(library, "MRMediaRemoteGetNowPlayingInfo") else {
         emit(["status": "unsupported"])

@@ -81,7 +81,7 @@ struct ControlPanelView: View {
                         }
                     }
                     Spacer()
-                    Button { NSApp.terminate(nil) } label: { Image(systemName: "power") }.help("退出 FancyLyrics")
+                    Button { NSApp.terminate(nil) } label: { Image(systemName: "power") }.help("退出 CloudVerse")
                 }.font(.system(size: 11))
             }
             .padding(20)
@@ -93,7 +93,7 @@ struct ControlPanelView: View {
     private var header: some View {
         HStack {
             Image(systemName: "waveform").foregroundStyle(Color.accentColor)
-            Text("FancyLyrics").font(.system(size: 13, weight: .semibold))
+            Text("CloudVerse").font(.system(size: 13, weight: .semibold))
             Spacer()
             Text(model.isDemo ? "DEMO" : "网易云音乐").font(.system(size: 9, weight: .medium)).foregroundStyle(.secondary)
         }

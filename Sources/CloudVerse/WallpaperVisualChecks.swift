@@ -8,7 +8,7 @@ import LyricsCore
         func check(_ condition: Bool, _ name: String) {
             if !condition { failures += 1; print("VISUAL FAIL: \(name)") }
         }
-        let suite = "FancyLyrics.VisualChecks.\(UUID().uuidString)"
+        let suite = "CloudVerse.VisualChecks.\(UUID().uuidString)"
         guard let defaults = UserDefaults(suiteName: suite) else { return false }
         defer { defaults.removePersistentDomain(forName: suite) }
         defaults.set("ink", forKey: "theme")

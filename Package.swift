@@ -2,17 +2,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "FancyLyrics",
+    name: "CloudVerse",
     platforms: [.macOS(.v13)],
     products: [
         .library(name: "LyricsCore", targets: ["LyricsCore"]),
         .library(name: "PlaybackBridge", type: .dynamic, targets: ["PlaybackBridge"]),
-        .executable(name: "FancyLyrics", targets: ["FancyLyrics"])
+        .executable(name: "CloudVerse", targets: ["CloudVerse"])
     ],
     targets: [
         .target(name: "LyricsCore"),
         .target(name: "PlaybackBridge"),
-        .executableTarget(name: "FancyLyrics", dependencies: ["LyricsCore"]),
+        .executableTarget(name: "CloudVerse", dependencies: ["LyricsCore"]),
         .executableTarget(name: "CoreChecks", dependencies: ["LyricsCore"], path: "Tests/LyricsCoreTests")
     ]
 )

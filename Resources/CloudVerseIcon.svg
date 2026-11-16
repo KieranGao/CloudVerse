@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="tile" x1="0.08" y1="0.02" x2="0.94" y2="0.96">
+      <stop offset="0" stop-color="#527DC4"/>
+      <stop offset="0.42" stop-color="#46559B"/>
+      <stop offset="1" stop-color="#322850"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.34" cy="0.16" r="0.84">
+      <stop offset="0" stop-color="#BADAF8" stop-opacity="0.46"/>
+      <stop offset="0.52" stop-color="#B6A4E3" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#262446" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cloud" x1="0.12" y1="0.06" x2="0.9" y2="0.97">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#E8ECFA"/>
+      <stop offset="1" stop-color="#C1C6E9"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5ADA7"/>
+      <stop offset="1" stop-color="#D96991"/>
+    </linearGradient>
+    <linearGradient id="verse" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#B2C5EF"/>
+      <stop offset="0.5" stop-color="#F1F0FF"/>
+      <stop offset="1" stop-color="#BBA4DF"/>
+    </linearGradient>
+    <filter id="tileShadow" x="-30%" y="-20%" width="160%" height="150%">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#17122D" flood-opacity="0.32"/>
+    </filter>
+    <filter id="cloudShadow" x="-40%" y="-40%" width="180%" height="190%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#1E204D" flood-opacity="0.3"/>
+    </filter>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="paperGrain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.12 0"/>
+    </filter>
+    <path id="tileShape" d="M220 64 H804 C886 64 960 138 960 220 V804 C960 886 886 960 804 960 H220 C138 960 64 886 64 804 V220 C64 138 138 64 220 64 Z"/>
+    <clipPath id="tileClip"><use href="#tileShape" xlink:href="#tileShape"/></clipPath>
+    <pattern id="versePattern" x="0" y="0" width="620" height="430" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#D4DCFA" stroke-width="1.6" stroke-linecap="round" opacity="0.18">
+        <path d="M126 132 H410 M126 152 H322"/>
+        <path d="M145 143 C132 121 155 98 184 108 C197 83 240 88 252 111 C278 100 310 116 306 135 C333 146 322 174 300 176 H160 C135 176 128 155 145 143 Z"/>
+        <path d="M58 354 H365 M58 374 H260"/>
+        <path d="M82 365 C69 343 92 320 121 330 C134 305 177 310 189 333 C215 322 247 338 243 357 C270 368 259 396 237 398 H97 C72 398 65 377 82 365 Z"/>
+        <path d="M302 568 H553 M302 588 H465"/>
+        <path d="M330 579 C317 557 340 534 369 544 C382 519 425 524 437 547 C463 536 495 552 491 571 C518 582 507 610 485 612 H345 C320 612 313 591 330 579 Z"/>
+      </g>
+    </pattern>
+    <g id="miniCloud" fill="none" stroke="#DCE5FC" stroke-width="1.8" stroke-linecap="round">
+      <path d="M0 24 C-13 8 2 -10 24 -5 C35 -24 64 -19 72 2 C91 -5 110 7 108 22 C126 30 118 49 101 50 H18 C0 50 -8 36 0 24 Z"/>
+      <path d="M18 66 H90 M18 79 H66"/>
+    </g>
+  </defs>
+  <g filter="url(#tileShadow)"><use href="#tileShape" xlink:href="#tileShape" fill="url(#tile)"/></g>
+  <g clip-path="url(#tileClip)">
+    <use href="#tileShape" xlink:href="#tileShape" fill="url(#glow)"/>
+    <rect x="64" y="64" width="896" height="896" fill="#FFFFFF" opacity="0.11" filter="url(#paperGrain)"/>
+    <g opacity="0.7"><use href="#miniCloud" xlink:href="#miniCloud" transform="translate(125 240) scale(1.4)"/><use href="#miniCloud" xlink:href="#miniCloud" transform="translate(705 680) scale(1.7)"/></g>
+    <path d="M-100 750 C180 470 440 350 770 130 C910 36 1020 -28 1150 -72" fill="none" stroke="#D9D2FF" stroke-width="210" opacity="0.06" filter="url(#softGlow)"/>
+    <path d="M62 810 C280 590 510 405 950 140" fill="none" stroke="#CBD7F9" stroke-width="2" opacity="0.16"/>
+    <path d="M64 860 C330 614 578 425 962 192" fill="none" stroke="#DBBEE9" stroke-width="1.5" opacity="0.18"/>
+    <g opacity="0.8" fill="#E6E8FF">
+      <circle cx="794" cy="246" r="4"/><circle cx="247" cy="598" r="3"/><circle cx="800" cy="652" r="3"/>
+      <path d="M805 273 V303 M790 288 H820 M229 450 V472 M218 461 H240" stroke="#E6E8FF" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <circle cx="512" cy="404" r="190" fill="#E5D7FF" opacity="0.19" filter="url(#softGlow)"/>
+    <g filter="url(#cloudShadow)">
+      <path d="M336 487 C270 487 236 447 247 399 C259 352 305 336 351 347 C367 275 425 229 499 229 C585 229 645 282 653 356 C709 334 768 365 778 413 C815 421 825 455 805 482 C791 498 766 506 731 506 H370 C352 498 342 491 336 487 Z" fill="url(#cloud)"/>
+      <path d="M335 458 C302 458 286 441 292 416 C300 388 329 380 360 388 C387 307 439 273 505 273 C566 273 610 312 624 371" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity="0.55"/>
+      <path d="M388 489 H710" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.32"/>
+    </g>
+    <g transform="translate(494 318)" fill="url(#coral)" stroke="#FFEBEC" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M-29 -11 C-35 -24 -19 -35 -7 -27 C-2 -24 0 -19 0 -16 C3 -23 8 -28 17 -28 C32 -28 40 -17 34 -4 L1 35 Z"/>
+    </g>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M306 620 H482 M542 620 H718" stroke="url(#verse)" stroke-width="9"/>
+      <path d="M320 667 H466 M558 667 H704" stroke="url(#verse)" stroke-width="9" opacity="0.72"/>
+      <path d="M286 715 H454 M570 715 H738" stroke="url(#verse)" stroke-width="7" opacity="0.42"/>
+      <path d="M483 664 L483 607 L495 587 L495 648 L507 620 L519 676 L531 645 L543 664" stroke="#F5B5C9" stroke-width="9"/>
+    </g>
+    <path d="M187 64 H837 C889 64 932 91 956 123" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.32"/>
+    <path d="M64 787 V203 C64 131 118 80 185 65" fill="none" stroke="#E5EDFF" stroke-width="2.5" opacity="0.16"/>
+  </g>
+  <use href="#tileShape" xlink:href="#tileShape" fill="none" stroke="#E8EBFF" stroke-opacity="0.18" stroke-width="2"/>
+</svg>

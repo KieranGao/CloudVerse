@@ -6,7 +6,7 @@ import LyricsCore
 enum Diagnostics {
     static func smokeCheck() -> Bool {
         NSApp.setActivationPolicy(.prohibited)
-        let suite = "FancyLyrics.Diagnostics.\(UUID().uuidString)"
+        let suite = "CloudVerse.Diagnostics.\(UUID().uuidString)"
         guard let defaults = UserDefaults(suiteName: suite) else { return false }
         defer { defaults.removePersistentDomain(forName: suite) }
         let preferences = Preferences(defaults: defaults)
@@ -108,7 +108,7 @@ enum Diagnostics {
     }
 
     static func monitorSync() {
-        let suite = "FancyLyrics.Monitor.\(UUID().uuidString)"
+        let suite = "CloudVerse.Monitor.\(UUID().uuidString)"
         guard let defaults = UserDefaults(suiteName: suite) else { exit(1) }
         let preferences = Preferences(defaults: defaults)
         let model = AppModel(preferences: preferences)
