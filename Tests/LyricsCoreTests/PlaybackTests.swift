@@ -1,0 +1,41 @@
+import Foundation
+import LyricsCore
+
+struct PlaybackTests {
+    func run() {
+        let track = Track(title: "Song", artist: "Artist", duration: 100)
+        let playing = PlaybackSnapshot(track: track, elapsed: 10, rate: 1, sampledAt: Date(timeIntervalSince1970: 100))
+        expectEqual(playing.position(at: Date(timeIntervalSince1970: 103)), 13)
+        expectEqual(playing.position(at: Date(timeIntervalSince1970: 300)), 100)
+        let paused = PlaybackSnapshot(track: track, elapsed: 20, rate: 0, sampledAt: Date(timeIntervalSince1970: 100))
+        expectEqual(paused.position(at: Date(timeIntervalSince1970: 300)), 20)
+        let seek = PlaybackSnapshot(track: track, elapsed: 2, rate: 1, sampledAt: Date(timeIntervalSince1970: 101))
+        expectEqual(seek.position(at: Date(timeIntervalSince1970: 103)), 4)
+        expectEqual(PlaybackText.time("03:05"), 185)
+        expectEqual(PlaybackText.time("1:02:03"), 3723)
+        expectNil(PlaybackText.time("3:99"))
+        expectNil(PlaybackText.time("歌名"))
+        expectEqual(PlaybackText.timePair("01:02 / 03:04")?.elapsed, 62)
+        expectEqual(PlaybackText.timePair("01:02 / 03:04")?.duration, 184)
+        expectNil(PlaybackText.timePair("100 / 200"))
+        let word = LyricWord(text: "你", start: 10, duration: 2)
+        expectEqual(word.progress(at: 9), 0)
+        expectEqual(word.progress(at: 11), 0.5)
+        expectEqual(word.progress(at: 13), 1)
+        expectEqual(LyricWord(text: "好", start: 10, duration: 0).progress(at: 10), 1)
+        let doc = LyricDocument(lines: [LyricLine(start: 2, text: "A"), LyricLine(start: 5, text: "B")])
+        expectNil(doc.index(at: 1))
+        expectEqual(doc.index(at: 2), 0)
+        expectEqual(doc.index(at: 100), 1)
+        expectFalse(Track(title: "Song", artist: "Artist", duration: 100).key == Track(title: "Song (Live)", artist: "Artist", duration: 100).key)
+        let payload = Data(#"{"title":"Song","artist":"Artist","album":"Album","duration":100,"elapsed":10,"rate":1,"sampledAt":100}"#.utf8)
+        let decoded = PlaybackPayload.decode(payload)
+        expectEqual(decoded?.snapshot.track.title, "Song")
+        expectEqual(decoded?.snapshot.track.artist, "Artist")
+        expectEqual(decoded?.snapshot.position(at: Date(timeIntervalSince1970: 103)), 13)
+        expectNil(PlaybackPayload.decode(Data(#"{"status":"unavailable"}"#.utf8)))
+        expectNil(PlaybackPayload.decode(Data(#"{"title":"","duration":100,"elapsed":10,"rate":1,"sampledAt":100}"#.utf8)))
+        expectNil(PlaybackPayload.decode(Data(#"{"title":"Song","duration":-1,"elapsed":10,"rate":1,"sampledAt":100}"#.utf8)))
+        expectNil(PlaybackPayload.decode(Data("not json".utf8)))
+    }
+}
