@@ -25,7 +25,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         controlPanel.behavior = .transient
         controlPanel.animates = true
         let height = min(690, (NSScreen.main?.visibleFrame.height ?? 800) - 70)
-        controlPanel.contentViewController = NSHostingController(rootView: ControlPanelView(model: model, preferences: preferences, openSettings: { [weak self] in self?.showSettings() }, resetPosition: { [weak self] in self?.resetPosition() }, dismiss: { [weak self] in self?.controlPanel.performClose(nil) }, panelHeight: height))
+        controlPanel.contentViewController = NSHostingController(rootView: ControlPanelView(
+            model: model,
+            preferences: preferences,
+            openSettings: { [weak self] in self?.showSettings() },
+            resetPosition: { [weak self] in self?.resetPosition() },
+            centerOnSecondaryDisplay: { [weak self] in self?.overlay?.centerOnSecondaryDisplay() },
+            dismiss: { [weak self] in self?.controlPanel.performClose(nil) },
+            panelHeight: height
+        ))
         controlPanel.contentSize = NSSize(width: 370, height: height)
         statusItem = item
         model.start()

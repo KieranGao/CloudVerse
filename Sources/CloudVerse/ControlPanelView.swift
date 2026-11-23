@@ -7,6 +7,7 @@ struct ControlPanelView: View {
     @ObservedObject var preferences: Preferences
     let openSettings: () -> Void
     let resetPosition: () -> Void
+    var centerOnSecondaryDisplay: () -> Void = {}
     let dismiss: () -> Void
     var panelHeight: Double = 690
 
@@ -69,6 +70,9 @@ struct ControlPanelView: View {
                     HStack {
                         Button("重新同步") { model.reloadLyrics(forceRefresh: true); model.poll() }.disabled(model.isDemo || model.isLoading)
                         Button("居中复位", action: resetPosition)
+                        Button("副屏居中", action: centerOnSecondaryDisplay)
+                            .disabled(NSScreen.screens.count < 2)
+                            .help(NSScreen.screens.count < 2 ? "连接第二台显示器后可用" : "将歌词移到副屏正中央")
                         Spacer()
                         Button { model.toggleDemo() } label: { Image(systemName: "sparkles") }.help(model.isDemo ? "退出演示" : "本地演示")
                     }.controlSize(.small)
