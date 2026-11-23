@@ -76,6 +76,11 @@ public enum VisualSettings {
 }
 
 public enum DesktopPlacement {
+    public static func frameOnSecondaryDisplay(screens: [CGRect], width: Double, height: Double) -> CGRect? {
+        guard let secondaryDisplay = screens.dropFirst().first else { return nil }
+        return frame(in: secondaryDisplay, width: width, height: height, anchor: .center)
+    }
+
     public static func frame(in bounds: CGRect, width: Double, height: Double, anchor: DesktopAnchor) -> CGRect {
         let w = min(bounds.width, max(1, width.isFinite ? width : 820))
         let h = min(bounds.height, max(1, height.isFinite ? height : 360))

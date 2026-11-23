@@ -62,6 +62,13 @@ final class OverlayWindow: NSPanel {
         saveFrame(usingName: frameName)
     }
 
+    func centerOnSecondaryDisplay() {
+        guard let target = DesktopPlacement.frameOnSecondaryDisplay(screens: NSScreen.screens.map(\.visibleFrame), width: preferences.width, height: preferences.overlayHeight) else { return }
+        preferences.anchor = .custom
+        setFrame(target, display: true)
+        saveFrame(usingName: frameName)
+    }
+
     private func applyPreferences() {
         let interactive = preferences.positioning || !preferences.locked
         let targetLevel = DesktopWindowPolicy.level(for: preferences.layer, positioning: interactive)
